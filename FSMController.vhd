@@ -1,7 +1,7 @@
 library IEEE;
 use ieee.std_logic_1164.ALL;
 
-entity FSMControler is
+entity FSMController is
     port(
         i_clock: in std_logic;
         i_reset: in std_logic;
@@ -15,14 +15,19 @@ entity FSMControler is
         o_mstl: out STD_LOGIC_VECTOR(2 downto 0);
         o_sstl: out STD_LOGIC_VECTOR(2 downto 0);
 
+        o_sstR: out std_logic;
+        o_mscR: out std_logic;
+        o_mtR: out std_logic;
+        o_sscR: out std_logic;
+
         o_msc: out std_logic;
         o_mt: out std_logic;
         o_ssc: out std_logic;
         o_sst: out std_logic
     );
-end FSMControler;
+end FSMController;
 
-architecture rtl of FSMControler is
+architecture rtl of FSMController is
 
 signal int_DA, int_DB: std_logic;
 signal int_A, int_ABar, int_B, int_BBar: std_logic;
@@ -72,9 +77,23 @@ int_DB <= ((int_ABar and int_BBar and i_sscs and i_msc) or (int_ABar and int_B a
 int_sstBar <= not(i_sst);
 int_mtBar <= not(i_mt);
 
+o_sstR <= int_ABar and int_BBar;
+o_mscR <= int_ABar and int_B;
+o_mtR <= int_A and int_BBar;
+o_sscR <= int_A and int_B;
+
 o_msc <= int_ABar and int_BBar;
 o_mt <= int_ABar and int_B;
 o_ssc <= int_A and int_BBar;
 o_sst <= int_A and int_B;
+
+o_mstl(0) <= int_ABar and int_BBar;
+o_mstl(1) <= int_ABar and int_B;
+o_mstl(2) <= int_A;
+
+o_sstl(0) <= int_A and int_BBar;
+o_sstl(1) <= int_A and int_B;
+o_sstl(2) <= int_ABar;
+
 
 end rtl;

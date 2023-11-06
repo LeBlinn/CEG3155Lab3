@@ -5,11 +5,11 @@ entity ClockDivider is
     port(
         i_clock: in std_logic;
         i_reset: in std_logic;
-        o_clock: out std_logic;
+        o_clock: out std_logic
     );
 end ClockDivider;
 
-architecture rtl of FSMControler is
+architecture rtl of ClockDivider is
 
 signal int_1: std_logic;
 signal int_1Bar: std_logic;
@@ -91,7 +91,7 @@ begin
         i_set => '0',
         i_d => int_2Bar,
         i_enable => '1',
-        i_clock => i_1,
+        i_clock => int_1,
         i_clear => i_reset,
         o_q => int_2,
         o_qBar => int_2Bar
@@ -102,7 +102,7 @@ begin
         i_set => '0',
         i_d => int_3Bar,
         i_enable => '1',
-        i_clock => i_2,
+        i_clock => int_2,
         i_clear => i_reset,
         o_q => int_3,
         o_qBar => int_3Bar
@@ -113,7 +113,7 @@ begin
         i_set => '0',
         i_d => int_4Bar,
         i_enable => '1',
-        i_clock => i_3,
+        i_clock => int_3,
         i_clear => i_reset,
         o_q => int_4,
         o_qBar => int_4Bar
@@ -124,7 +124,7 @@ begin
         i_set => '0',
         i_d => int_5Bar,
         i_enable => '1',
-        i_clock => i_4,
+        i_clock => int_4,
         i_clear => i_reset,
         o_q => int_5,
         o_qBar => int_5Bar
@@ -135,7 +135,7 @@ begin
         i_set => '0',
         i_d => int_6Bar,
         i_enable => '1',
-        i_clock => i_5,
+        i_clock => int_5,
         i_clear => i_reset,
         o_q => int_6,
         o_qBar => int_6Bar
@@ -146,7 +146,7 @@ begin
         i_set => '0',
         i_d => int_7Bar,
         i_enable => '1',
-        i_clock => i_6,
+        i_clock => int_6,
         i_clear => i_reset,
         o_q => int_7,
         o_qBar => int_7Bar
@@ -157,7 +157,7 @@ begin
         i_set => '0',
         i_d => int_8Bar,
         i_enable => '1',
-        i_clock => i_7,
+        i_clock => int_7,
         i_clear => i_reset,
         o_q => int_8,
         o_qBar => int_8Bar
@@ -168,7 +168,7 @@ begin
         i_set => '0',
         i_d => int_9Bar,
         i_enable => '1',
-        i_clock => i_8,
+        i_clock => int_8,
         i_clear => i_reset,
         o_q => int_9,
         o_qBar => int_9Bar
@@ -179,7 +179,7 @@ begin
         i_set => '0',
         i_d => int_10Bar,
         i_enable => '1',
-        i_clock => i_9,
+        i_clock => int_9,
         i_clear => i_reset,
         o_q => int_10,
         o_qBar => int_10Bar
@@ -190,7 +190,7 @@ begin
         i_set => '0',
         i_d => int_11Bar,
         i_enable => '1',
-        i_clock => i_10,
+        i_clock => int_10,
         i_clear => i_reset,
         o_q => int_11,
         o_qBar => int_11Bar
@@ -201,7 +201,7 @@ begin
         i_set => '0',
         i_d => int_12Bar,
         i_enable => '1',
-        i_clock => i_11,
+        i_clock => int_11,
         i_clear => i_reset,
         o_q => int_12,
         o_qBar => int_12Bar
@@ -212,7 +212,7 @@ begin
         i_set => '0',
         i_d => int_13Bar,
         i_enable => '1',
-        i_clock => i_12,
+        i_clock => int_12,
         i_clear => i_reset,
         o_q => int_13,
         o_qBar => int_13Bar
@@ -223,7 +223,7 @@ begin
         i_set => '0',
         i_d => int_14Bar,
         i_enable => '1',
-        i_clock => i_13,
+        i_clock => int_13,
         i_clear => i_reset,
         o_q => int_14,
         o_qBar => int_14Bar
@@ -234,7 +234,7 @@ begin
         i_set => '0',
         i_d => int_15Bar,
         i_enable => '1',
-        i_clock => i_14,
+        i_clock => int_14,
         i_clear => i_reset,
         o_q => int_15,
         o_qBar => int_15Bar
@@ -245,7 +245,7 @@ begin
         i_set => '0',
         i_d => int_16Bar,
         i_enable => '1',
-        i_clock => i_15,
+        i_clock => int_15,
         i_clear => i_reset,
         o_q => int_16,
         o_qBar => int_16Bar
@@ -256,7 +256,7 @@ begin
         i_set => '0',
         i_d => int_17Bar,
         i_enable => '1',
-        i_clock => i_16,
+        i_clock => int_16,
         i_clear => i_reset,
         o_q => int_17,
         o_qBar => int_17Bar
@@ -267,7 +267,7 @@ begin
         i_set => '0',
         i_d => int_18Bar,
         i_enable => '1',
-        i_clock => i_17,
+        i_clock => int_17,
         i_clear => i_reset,
         o_q => int_18,
         o_qBar => int_18Bar
@@ -278,7 +278,7 @@ begin
         i_set => '0',
         i_d => int_19Bar,
         i_enable => '1',
-        i_clock => i_18,
+        i_clock => int_18,
         i_clear => i_reset,
         o_q => int_19,
         o_qBar => int_19Bar
@@ -289,7 +289,7 @@ begin
         i_set => '0',
         i_d => int_20Bar,
         i_enable => '1',
-        i_clock => i_19,
+        i_clock => int_19,
         i_clear => i_reset,
         o_q => int_20,
         o_qBar => int_20Bar
@@ -300,7 +300,7 @@ begin
         i_set => '0',
         i_d => int_21Bar,
         i_enable => '1',
-        i_clock => i_20,
+        i_clock => int_20,
         i_clear => i_reset,
         o_q => int_21,
         o_qBar => int_21Bar
@@ -311,7 +311,7 @@ begin
         i_set => '0',
         i_d => int_22Bar,
         i_enable => '1',
-        i_clock => i_21,
+        i_clock => int_21,
         i_clear => i_reset,
         o_q => int_22,
         o_qBar => int_22Bar
@@ -322,7 +322,7 @@ begin
         i_set => '0',
         i_d => int_23Bar,
         i_enable => '1',
-        i_clock => i_22,
+        i_clock => int_22,
         i_clear => i_reset,
         o_q => int_23,
         o_qBar => int_23Bar
@@ -333,12 +333,12 @@ begin
         i_set => '0',
         i_d => int_24Bar,
         i_enable => '1',
-        i_clock => i_23,
+        i_clock => int_23,
         i_clear => i_reset,
         o_q => int_24,
         o_qBar => int_24Bar
     );
 
-    o_clock <= o_q;
+    o_clock <= int_24;
 
 end rtl;
